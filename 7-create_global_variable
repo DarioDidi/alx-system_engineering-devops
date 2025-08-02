@@ -1,0 +1,2 @@
+BEST="school"
+echo $BEST
