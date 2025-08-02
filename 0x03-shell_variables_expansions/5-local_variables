@@ -1,9 +1,2 @@
 #!/bin/bash
-
-for i in _ {a..z} {A..Z}
-do
-   for var in `eval echo "\\${!$i@}"`
-   do
-      echo $var
-   done 
-done
+declare -p 
