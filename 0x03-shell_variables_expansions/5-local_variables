@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((set -o posix ; set) | less)
+echo "$((set -o posix ; set) | less)"
