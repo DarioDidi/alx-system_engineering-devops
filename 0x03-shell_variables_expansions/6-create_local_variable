@@ -1,8 +1,2 @@
-#!/bin/bash
-
-function name(){
-	local BEST="school"
-	echo $BEST
-}
-
-name
+#!/bin/bash 
+(BEST="school")
