@@ -1,3 +1,2 @@
 #!/bin/bash
-read -p "🔐 Hidden message? " input_message
-echo -e "$(tr 'A-Za-z' 'N-ZA-Mn-za-m' <<< "$input_message")"
+tr 'A-Za-z' 'N-ZA-Mn-za-m'
