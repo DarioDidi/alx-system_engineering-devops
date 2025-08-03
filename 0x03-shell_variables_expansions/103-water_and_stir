@@ -1,3 +1,2 @@
 #!/bin/bash
-echo $((water#$WATER))
-
+WATER_BASE=$(echo -n "$WATER" | fold -w1 | sort -u | tr -d '\n' | wc -c); STIR_BASE=$(echo -n "$STIR" | fold -w1 | sort -u | tr -d '\n' | wc -c); BESTCHOL="bestchol"; WATER_VAL=$(echo -n "$WATER" | while read -n1 c; do [ -n "$c" ] && echo -n "${WATER_BASE} ${BESTCHOL%%$c*}"; done | wc -w); STIR_VAL=$(echo -n "$STIR" | while read -n1 c; do [ -n "$c" ] && echo -n "${STIR_BASE} ${BESTCHOL%%$c*}"; done | wc -w); TOTAL=$((WATER_VAL + STIR_VAL)); RESULT=""; while [ $TOTAL -gt 0 ]; do RESULT="${BESTCHOL:$((TOTAL % ${#BESTCHOL})):1}$RESULT"; TOTAL=$((TOTAL / ${#BESTCHOL})); done; echo "${RESULT:-${BESTCHOL:0:1}}"
